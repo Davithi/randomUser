@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        border: 1px solid;
+        display: flex;
+        flex-flow: column ;
+        align-items: center;
+
+    }
+    .imgBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+    .list{
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        height: 60px;
+        list-style: none;
+        margin: 10px;
+    }
+    .list img{
+        height: 100%;
+        border: 2px solid;
+    }
+</style>
+<body>
+    
+
+    <div class="container">
+        <div class="imgBox">
+            <img id="img" src="" alt="">
+        </div>
+        <p id="my" class="my"></p>
+        <div class="aboutMe">
+            <h3 id="userName"></h3>
+        </div>
+
+        <ul class="list" id="list">
+            <li id="name">
+                <img src="img/user.jpg" alt="">
+            </li>
+            <li id="email">
+                <img src="img/mail.jpg" alt="">
+            </li>
+            <li id="dob">
+                <img src="img/list.png" alt="">
+            </li>
+            <li id="location">
+                <img src="img/location.png" alt="">
+            </li>
+            <li id="phone">
+                <img src="img/Phone.png" alt="">
+            </li>
+            <li id="login">
+                <img src="img/secret.png" alt="">
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
