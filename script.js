@@ -8,13 +8,19 @@ body.onload = async () => {
 
   let list = document.querySelectorAll("#list");
   let nam = "name";
+  
   for (key of list[0].children) {
-    key.onmouseover = (e) => {
+    key.addEventListener( "mouseover" , listFunc )   
+    function listFunc(e){
       nam = e.target.parentElement.id
-      console.log(nam);
-      for (key in user) {
+      tag = e.target;
+      tag.style.transition = "1s"
+      tag.style.transform  = "rotate(360deg)";
+      console.log(tag,'asd');
+      for (keys in user) {
         img.src = user["picture"].large;
-        switch (nam) {
+      }
+      switch (nam) {
             case 'name':
                 my.innerHTML = `Hi, My name is`;
                 userName.innerHTML = `${user[nam].title} ${user["name"].first} ${user["name"].title}`;
@@ -30,6 +36,14 @@ body.onload = async () => {
                 case 'location':
                 my.innerHTML = `My addres is`;
                 userName.innerHTML = `${user[nam].street["number"]} ${user[nam].street["name"]}`;
+                let googleMap = document.createElement("iframe");
+                googleMap.style.width = "100%";
+                googleMap.style.height = "500px";
+                googleMap.loading = "lazy";
+                googleMap.allowfullscreen;
+                googleMap.referrerpolicy = "no-referrer-when-downgrade";
+                googleMap.src =  "https://www.google.com/maps/embed";
+                container.appendChild(googleMap)
                 break;
             case 'phone':
                 my.innerHTML = `My phone number is`;
@@ -41,11 +55,12 @@ body.onload = async () => {
             default:
                 break;
         }
-      }
-    };
+    }
         img.src = user["picture"].large;
         userName.innerHTML = `${user[nam].title} ${user["name"].first} ${user["name"].title}`;
         my.innerHTML = `Hi, My name is`;
       
   }
 };
+
+
